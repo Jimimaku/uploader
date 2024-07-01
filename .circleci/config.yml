@@ -33,7 +33,7 @@ jobs:
 
   build-linux-and-osx:
     docker:
-      - image: cimg/node:18.20.2@sha256:a4e00d10beb6841ff11a3bb94ce9c54f5569bd5a37496fce678813719bfe2c1a
+      - image: cimg/node:18.20.3@sha256:b7e440d8e097d27ca514390ee703ad95b0b8cc42ccd5ac88a4d8bbd06a44754f
 
     working_directory: ~/repo
 
@@ -66,7 +66,7 @@ jobs:
 
   build-alpine:
     docker:
-      - image: alpine:3.19.1@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+      - image: alpine:3.20.1@sha256:b89d9c93e9ed3597455c90a0b88a8bbb5cb7188438f70953fede212a0c4394e0
 
     working_directory: ~/repo
 
@@ -119,7 +119,7 @@ jobs:
 
   test-alpine:
     docker:
-      - image: alpine:3.19.1@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+      - image: alpine:3.20.1@sha256:b89d9c93e9ed3597455c90a0b88a8bbb5cb7188438f70953fede212a0c4394e0
     steps:
       - run:
           name: Install git
@@ -156,7 +156,7 @@ jobs:
 
   test-alpine-proxy:
     docker:
-      - image: alpine:3.19.1@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+      - image: alpine:3.20.1@sha256:b89d9c93e9ed3597455c90a0b88a8bbb5cb7188438f70953fede212a0c4394e0
     steps:
       - run:
           name: Install git
@@ -191,7 +191,7 @@ jobs:
 
   test-alpine-without-git:
     docker:
-      - image: alpine:3.19.1@sha256:c5b1261d6d3e43071626931fc004f70149baeba2c8ec672bd4f27761f8e1ad6b
+      - image: alpine:3.20.1@sha256:b89d9c93e9ed3597455c90a0b88a8bbb5cb7188438f70953fede212a0c4394e0
     steps:
       - run:
           name: Install git
@@ -230,7 +230,7 @@ jobs:
 
   test-linux:
     docker:
-      - image: cimg/node:18.20.2@sha256:a4e00d10beb6841ff11a3bb94ce9c54f5569bd5a37496fce678813719bfe2c1a
+      - image: cimg/node:18.20.3@sha256:b7e440d8e097d27ca514390ee703ad95b0b8cc42ccd5ac88a4d8bbd06a44754f
     steps:
       - checkout
       - attach_workspace:
@@ -263,7 +263,7 @@ jobs:
 
   test-linux-without-git:
     docker:
-      - image: cimg/node:18.20.2@sha256:a4e00d10beb6841ff11a3bb94ce9c54f5569bd5a37496fce678813719bfe2c1a
+      - image: cimg/node:18.20.3@sha256:b7e440d8e097d27ca514390ee703ad95b0b8cc42ccd5ac88a4d8bbd06a44754f
     steps:
       - checkout
       - attach_workspace:
@@ -504,7 +504,7 @@ jobs:
 
   review:
     docker:
-      - image: cimg/node:18.20.2@sha256:a4e00d10beb6841ff11a3bb94ce9c54f5569bd5a37496fce678813719bfe2c1a
+      - image: cimg/node:18.20.3@sha256:b7e440d8e097d27ca514390ee703ad95b0b8cc42ccd5ac88a4d8bbd06a44754f
     steps:
       - attach_workspace:
           at: .
@@ -543,7 +543,7 @@ jobs:
 
   deploy:
     docker:
-      - image: cimg/node:18.20.2@sha256:a4e00d10beb6841ff11a3bb94ce9c54f5569bd5a37496fce678813719bfe2c1a
+      - image: cimg/node:18.20.3@sha256:b7e440d8e097d27ca514390ee703ad95b0b8cc42ccd5ac88a4d8bbd06a44754f
     steps:
       - attach_workspace:
           at: .
@@ -569,7 +569,7 @@ jobs:
             - release_tag
   release:
     docker:
-      - image: google/cloud-sdk:471.0.0-slim@sha256:bfbeacf0a8fece09fe0b26a2b9e8bf225adf359395c6072f2ede73ce556f29dc
+      - image: google/cloud-sdk:482.0.0-slim@sha256:d5249e206bb2ce00454cfd33613016e989b47233d9da141be5a38438fc894749
     steps:
       - attach_workspace:
           at: .
